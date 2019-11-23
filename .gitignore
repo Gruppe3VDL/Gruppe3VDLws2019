@@ -5,3 +5,6 @@
 # IntelliJ files
 .idea/
 *.iml
+
+# Jupyter files
+*/.ipynb_checkpoints/
