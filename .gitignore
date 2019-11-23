@@ -6,5 +6,10 @@
 .idea/
 *.iml
 
-# Jupyter files
-*/.ipynb_checkpoints/
+# Build files
+*.pyc
+__pycache__
+.ipynb_checkpoints
+
+# Datasets
+exercise2/task2/data/
