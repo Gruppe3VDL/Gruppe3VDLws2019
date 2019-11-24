@@ -1,6 +1,7 @@
 # macOS config files
 .DS_STORE
 ._*
+Icon?
 
 # IntelliJ files
 .idea/
