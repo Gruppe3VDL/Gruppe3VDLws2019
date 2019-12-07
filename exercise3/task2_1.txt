@@ -1,20 +1,14 @@
 1. What is the receptive field of a convolution layer?
-
-A:
+A: In a CNN, every unit in a convolutional layer is only connected to part or subregion of the input image. This input patch is called the receptive field. In other words, the receptive field is the region in input space that a particular feature in a feature map is looking at or is affected by.
 
 
 2. What is the effective receptive field of a convolution layer?
-
-A:
+A: In the paper Understanding the Effective Receptive Field in Deep Convolutional Neural Networks (arXiv:1701.04128), the authors show that the actual receptive field for a CNN only occupies a small fraction of the theoretical receptive field. The intuition behind the concept of Effective Receptive Field is that not all pixels in the receptive field contribute equally to the output unit’s response. Rather the central units have a higher weight as compared to border units.
 
 
 3. How can the effective receptive field of a convolution layer be computed? (Formula, no closed-form)
-
 A:
 
 
 4. What is the receptive field of a fully-connected layer?
-
-A:
-
-
+A: A fully-connected layer receives input from every element of the previous layer as opposed to a convolutional layer which receives input from some particular number of locations in the previous layer. This means that the receptive field of a fully-connected layer is the entire previous layer.
