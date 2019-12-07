@@ -1,0 +1,20 @@
+1. What is the receptive field of a convolution layer?
+
+A:
+
+
+2. What is the effective receptive field of a convolution layer?
+
+A:
+
+
+3. How can the effective receptive field of a convolution layer be computed? (Formula, no closed-form)
+
+A:
+
+
+4. What is the receptive field of a fully-connected layer?
+
+A:
+
+

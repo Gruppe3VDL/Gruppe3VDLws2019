@@ -1,0 +1,20 @@
+1. How can a fully connected layer be realized using a convolutional layer?
+
+A:
+
+
+2. What is the importance of skip connections in a CNN for image segmentation and object detection problems?
+
+A:
+
+
+3. What does the ground truth look like in semantic segmentation and which loss function is typically used for training?
+
+A:
+
+
+4. Why is accuracy not a good measure to evaluate semantic segmentation networks? Which measure is better-suited?
+
+A:
+
+
