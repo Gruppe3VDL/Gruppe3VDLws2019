@@ -13,5 +13,4 @@ __pycache__
 .ipynb_checkpoints
 
 # Datasets
-exercise2/task1/data/
-exercise2/task2/data/
+data
