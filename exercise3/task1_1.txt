@@ -1,20 +1,30 @@
 1. How can a fully connected layer be realized using a convolutional layer?
 
-A:
+A:Fully connected networks can be realized using convolutional layer whose filter size is the same as the width and height of input volume, and the number of filters is the same as the depth of input volume.
+For example, an AlexNet uses two FC layers of size 4096 and finally the last FC layers with 1000 neurons that compute the class scores. We can convert each of these three FC layers to CONV layers as described above:
+•	Replace the first FC layer that looks at [7x7x512] volume with a CONV layer that uses filter size F=7F=7, giving output volume [1x1x4096].
+•	Replace the second FC layer with a CONV layer that uses filter size F=1F=1, giving output volume [1x1x4096]
+•	Replace the last FC layer similarly, with F=1F=1, giving final output [1x1x1000]
+
 
 
 2. What is the importance of skip connections in a CNN for image segmentation and object detection problems?
 
-A:
+A:The skip connections can combine the semantic information from a deep, coarse layer with appearance information from a shallow fine layer. 
+As the network becomes deeper and deeper, the receptive field of the corresponding feature map will become larger and larger, but the amount of detail information retained will be less and less. For semantic segmentation tasks, the rich detailed information retained by high-level convolution is very useful. Based on the encoder-decoder symmetrical structure, the feature map extracted from downsampling in the encoder process and the new feature map obtained from upsampling in the decoder process are used for channel dimension stitching based on the encoder-decoder symmetrical structure. With the cross-layer feature reconstruction module, some important feature information in the high-level convolution can be preserved to a greater extent, which is conducive to achieving a finer segmentation effect.
 
 
 3. What does the ground truth look like in semantic segmentation and which loss function is typically used for training?
 
-A:
+A:The ground truth in semantic segmentation consist of regions which are different shapes such as line segments, curve segments and circles etc. For every pixels in the same region, they have the same color, which indicate that they are the same classification.
+The most typically used loss function for the task of image segmentation is a pixel-wise cross entropy loss. This loss examines each pixel individually, comparing the class predictions (depth-wise pixel vector) to our one-hot encoded target vector.
+
 
 
 4. Why is accuracy not a good measure to evaluate semantic segmentation networks? Which measure is better-suited?
 
-A:
+A:When we meet the problem of class imbalance (which means that a class or some classes dominate the image, while some other classes make up only a small portion of the image), even though the networks predict all the pixels as the dominate class then the accuracy will be very high.
+The Intersection-Over-Union (IoU), also known as the Jaccard Index, and the F1 Score are better-suited measured.
+
 
 
