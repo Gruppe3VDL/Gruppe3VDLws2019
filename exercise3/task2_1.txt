@@ -5,9 +5,13 @@ A: In a CNN, every unit in a convolutional layer is only connected to part or su
 2. What is the effective receptive field of a convolution layer?
 A: In the paper Understanding the Effective Receptive Field in Deep Convolutional Neural Networks (arXiv:1701.04128), the authors show that the actual receptive field for a CNN only occupies a small fraction of the theoretical receptive field. The intuition behind the concept of Effective Receptive Field is that not all pixels in the receptive field contribute equally to the output unit’s response. Rather the central units have a higher weight as compared to border units.
 
+B:The paper Understanding the Effective Receptive Field in Deep Convolutional Neural Networks define the effective receptive field (ERF) of this central output unit as region containing any input pixel with a
+non-negligible impact on that unit.
+
 
 3. How can the effective receptive field of a convolution layer be computed? (Formula, no closed-form)
-A:
+A: ERF_(l+1) = ( RF_l + (kernel_size_(l+1) - 1) *  π^(i=l) feature_stride_l ) ;   l represent the l-th layer
+                                                  i=1
 
 
 4. What is the receptive field of a fully-connected layer?
